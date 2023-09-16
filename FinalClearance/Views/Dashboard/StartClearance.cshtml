@@ -1,0 +1,371 @@
+﻿@model FinalClearance.Models.Person
+
+@{
+    ViewData["Title"] = "StartClearance";
+    Layout = "~/Views/Shared/_DashboardLayout.cshtml";
+}
+
+
+<hr />
+
+
+<!-- general form elements disabled -->
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Create User</h3>
+    </div>
+
+    <div class="container">
+        <div class="container text-center bg-light" id="tablayoutResponsive">
+            <button class="hl header-menu-selected" data-page="personalInformation-div">
+                <i class="fa fa-user-plus"></i>
+                <span class="txtName">Student Bio-data</span>
+            </button>
+            <button class="hl header-menu" data-page="nextOfKin-div">
+                <i class="fa fa-book"></i>
+                <span class="txtName">Academic Details</span>
+            </button>
+
+            <button class="hl header-menu" data-page="OlevelInformation-div">
+                <i class="fa fa-school"></i>
+                <span class="txtName">Next of Kin</span>
+            </button>
+
+@*            <button class="hl header-menu" data-page="jambInformation-div">
+                <i class="fa fa-school"></i>
+                <span class="txtName">Jamb Information</span>
+            </button>
+*@        </div>
+
+    </div>
+
+    <!-- /.card-header -->
+@*    <form asp-controller="Settings" asp-action="CreatePerson">
+*@
+    <div id="personalInformation-div" class="admissionForm-active">
+    <div class="card-body" id="tab1">
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" type="text" class="form-control" placeholder="Enter First Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="LastName"></label>
+                        <input asp-for="LastName" type="text" class="form-control" placeholder="Enter Last Name">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- textarea -->
+                    <div class="form-group">
+                        <label asp-for="OtherName"></label>
+                        <input asp-for="OtherName" type="text" class="form-control" placeholder="Enter Other Name">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="PhoneNumber"></label>
+                            <input asp-for="PhoneNumber" type="text" class="form-control" placeholder="Enter Phone Number">
+                    </div>
+                </div>
+            </div>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label asp-for="Email"></label>
+                            <input asp-for="Email" type="text" class="form-control" placeholder="Enter Email">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Address"></label>
+                            <input  asp-for="Address" type="text" class="form-control" placeholder="Residential Address">
+                        </div>
+
+                        <div class="form-group" style="float:right">
+                        <input type="submit" value="Save and Next" class="hl header-menu" data-page="nextOfKin-div"
+                               style="background-color:#1A73E8; border:none; line-height:30px; color:aliceblue; padding:10px;
+                    border-radius:6px; width:120px; align-items:center" />
+                    </div>
+                    </div>
+                </div>
+  
+       
+    </div>
+    </div>
+    <!-- /.card-body -->
+    <!-- /.card-header -->
+    <div id="nextOfKin-div" class="admissionForm" style="margin-left:50px; margin-right:50px;">
+        <div class="card-body" id="tab2" >
+            
+                <div class="row" >
+                    <div class="col-sm-6">
+                    
+                        <div class="form-group">
+                            <label class="control-label">Addssion Type</label>
+                            <select asp-for="AdmissionType" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Faculty" class="control-label"></label>
+                            <select asp-for="Faculty" id="faculty" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+
+                    <div class="form-group">
+                        <label class="control-label" asp-for="Department"></label>
+                        <select asp-for="Department" id="department" class="form-control"></select>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Programme" class="control-label"></label>
+                        <select asp-for="Programme" id="programme" class="form-control"></select>
+
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Session" class="control-label"></label>
+                            <select asp-for="Session" id="session" class="form-control"></select>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <label asp-for="Semester" class="control-label"></label>
+                            <select asp-for="Semester" id="semester" class="form-control"></select>
+                    </div>
+                </div>
+            
+        </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="Level" class="control-label"></label>
+                        <select asp-for="Level" id="level" class="form-control"></select>
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+    </div>
+
+        <div class="form-group" style="float:right">
+            <input type="submit" value="Save and Next" class="hl header-menu" data-page="OlevelInformation-div"
+                   style="background-color:#1A73E8; border:none; line-height:30px; color:aliceblue; padding:10px;
+                    border-radius:6px; width:120px; align-items:center" />
+        </div>
+            
+        
+    </div>
+
+
+    <!-- /.card-body -->
+
+    <!-- /.card-header -->
+    <div id="OlevelInformation-div" class="admissionForm">
+    <div class="card-body" id="tab3">
+           
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- text input -->
+                    <div class="form-group">
+                        <label asp-for="NextOfKinName" class="control-label"></label>
+                        <input type="text" class="form-control" placeholder="Next of Kin FullName" asp-for="NextOfKinName">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="NextOfKinAddress" class="control-label"></label>
+                        <input type="text" class="form-control" placeholder="Next of kin Address" asp-for="NextOfKinAddress">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <!-- textarea -->
+                    <div class="form-group">
+                        <label asp-for="NextOfKinPhoneNumber" class="control-label"></label>
+                        <input type="text" class="form-control" placeholder="Enter Phone Number" asp-for="NextOfKinPhoneNumber">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label asp-for="NextOfKinRelationship" class="control-label"></label>
+                        <select asp-for="NextOfKinRelationship" class="form-control"></select>
+                    </div>
+                </div>
+            </div>
+
+                <div class="form-group" style="float:right">
+                <input type="submit" value="Save and Next" class="btn btn-primary" id="createPerson"/>
+                </div>
+            
+       
+    </div>
+    </div>
+@*</form>
+*@    
+
+    
+</div>
+
+<!-- /.card -->
+<!-- general form elements disabled -->
+
+<!-- Main content -->
+@*<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-12">
+                <!-- jquery validation -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Quick Example <small>jQuery Validation</small></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form id="quickForm">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+
+                                    </div>
+                                    <div class="col">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Password</label>
+                                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <div class="form-group mb-0">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" name="terms" class="custom-control-input" id="exampleCheck1">
+                                    <label class="custom-control-label" for="exampleCheck1">I agree to the <a href="#">terms of service</a>.</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+            <!--/.col (left) -->
+            <!-- right column -->
+            <div class="col-md-6">
+            </div>
+            <!--/.col (right) -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+*@<!-- /.content -->
+@*<div class="row" style="width:; ">
+
+   
+  
+        <form asp-action="StartClearance">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="col">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OtherName" class="control-label"></label>
+                <input asp-for="OtherName" class="form-control" />
+                <span asp-validation-for="OtherName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label"></label>
+                <input asp-for="PhoneNumber" class="form-control" />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label"></label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Faculty" class="control-label"></label>
+                <input asp-for="Faculty" class="form-control" />
+                <span asp-validation-for="Faculty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Department" class="control-label"></label>
+                <input asp-for="Department" class="form-control" />
+                <span asp-validation-for="Department" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Programme" class="control-label"></label>
+                <input asp-for="Programme" class="form-control" />
+                <span asp-validation-for="Programme" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CreatedDateTime" class="control-label"></label>
+                <input asp-for="CreatedDateTime" class="form-control" />
+                <span asp-validation-for="CreatedDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+*@

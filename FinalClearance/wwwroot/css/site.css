@@ -1,0 +1,90 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  
+}
+.tab-button {
+    background-color:#258cfb;
+    cursor:pointer;
+}
+/*.card-body{
+    display:none;
+}
+*/
+.active{
+    display:block;
+    background-color:aqua;
+}
+
+.header-menu > span {
+    color: #0094ff;
+}
+/*#nextOfKin-div {
+    display: block;
+}*/
+
+.header-menu-selected {
+    border: 0px;
+    /*border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;*/
+    /*font-weight: bold;*/
+    transition: all 0.3s ease;
+    /*    padding: 15px 0px 10px 0px;
+*/ background-color: #ffffff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /*    margin-right: 5px;
+*/ /*    border-bottom: solid 4px #FF7F00 !important;
+*/ /*font-size: 0.9em;*/
+    line-height: 50px;
+    color: #808080;
+    /**/
+}
+
+button {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    /*color: #fff;*/
+}
+
+    button > * {
+        pointer-events: none;
+    }
+.admissionForm{
+    display:none;
+}
+.admissionForm-active{
+    display:block;
+}
+
+@media only screen and (max-width:560px) {
+    .txtName {
+        display: none;
+    }
+}
+
+.btn{
+    border:thin #808080 1px!important;
+}
+
